@@ -14,7 +14,7 @@ class Directory extends React.Component {
                 title: 'hats',
                 imageUrl: 'https://i.ibb.co/cvpntL1/hats.png',
                 id: 1,
-                linkUrl: 'shop/hats'
+                linkUrl: 'hats'
               },
               {
                 title: 'jackets',
@@ -52,10 +52,15 @@ class Directory extends React.Component {
         // displays the menulist in the homepage
         <div className='directory-menu'>
             {   
-                    // this displays the objects in our state
-                this.state.sections.map(({title, imageUrl,id,size }) => (
+                    // this displays the objects in our state map function
+                    // meaning for ...othersectionprops is pass all the other properties accordingly. base on the id given
+                this.state.sections.map(({id, ...otherSectionProps }) => (
+
+
                     // this is from the menu component we import
-                    <MenuItem key = {id} title = {title} imageUrl={imageUrl} size ={size} />
+                    // key title imageurl size are the props in MenuItem
+                    // ... othersectionprops was called in line 57 in order to display the other properties accordingly
+                    <MenuItem key = {id} {...otherSectionProps} />
                 ))
             }
             
