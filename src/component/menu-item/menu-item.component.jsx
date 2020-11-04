@@ -10,6 +10,7 @@ const MenuItem =({ title, imageUrl,size, history,linkUrl, match }) => (
 //  it is in a object structure
 <div 
 className = {`${size} menu-item`} 
+//code for the the route
 onClick={() => history.push(`${match.url}${linkUrl}`)}
 >
 
